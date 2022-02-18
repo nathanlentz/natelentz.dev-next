@@ -1,5 +1,4 @@
 import { getCssText } from 'stitches.config'
-
 import NextDocument, { Head, Html, Main, NextScript } from 'next/document'
 import * as React from 'react'
 
