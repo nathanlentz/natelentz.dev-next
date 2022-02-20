@@ -15,7 +15,10 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["./src/components/*"]
+      "@common/*": ["./src/modules/common/*"],
+      "@home/*": ["./src/modules/home/*"],
+      "@writing/*": ["./src/modules/writing"],
+      "@/*": ["./src/*"]
     },
     "incremental": true
   },
