@@ -1,13 +1,14 @@
 import type { NextPage } from 'next'
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
 import { NextSeo, NextSeoProps } from 'next-seo'
+import { Box } from '@common/components'
 
 const title = 'Home | Nate Lentz'
 const SEO: NextSeoProps = {
   title,
   openGraph: {
     title,
-  }
+  },
 }
 
 const Home: NextPage = () => {
@@ -17,8 +18,11 @@ const Home: NextPage = () => {
       <VisuallyHidden.Root>
         <h1>Home</h1>
       </VisuallyHidden.Root>
-
-      <h1>Hello World</h1>
+      <Box
+        css={{
+          height: '1800px',
+        }}
+      ></Box>
     </>
   )
 }

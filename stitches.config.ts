@@ -5,9 +5,22 @@ export const { config, styled, getCssText, theme, createTheme, css } =
   createStitches({
     theme: {
       fonts: {},
-      colors: {},
-      shadows: {},
-      transitions: {},
+      colors: {
+        primary: '#78C4A1',
+        loContrast: '#202023',
+        hiContrast: '#FBFCFD',
+      },
+      shadows: {
+        focus: '0 0 0 3px black',
+      },
+      transitions: {
+        default: '225ms cubic-bezier(0.4, 0, 0.2, 1)',
+      },
+      radii: {
+        none: 0,
+        round: '50%',
+        pill: '9999px',
+      },
       fontWeights: {},
       fontSizes: {
         1: 'clamp(0.80rem, 0.69rem + 0.48vw, 1.00rem)',
@@ -71,9 +84,15 @@ export const { config, styled, getCssText, theme, createTheme, css } =
         marginTop: value,
         marginBottom: value,
       }),
+      gtc: (value: Stitches.PropertyValue<'gridTemplateColumns'>) => ({
+        gridTemplateColumns: value,
+      }),
     },
   })
 
 export const lightTheme = createTheme({
-  colors: {},
+  colors: {
+    hiContrast: '#202023',
+    loContrast: '#FBFCFD',
+  },
 })
