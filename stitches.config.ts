@@ -1,5 +1,6 @@
 import type * as Stitches from '@stitches/react'
 import { createStitches } from '@stitches/react'
+import { slate } from '@radix-ui/colors'
 
 export const { config, styled, getCssText, theme, createTheme, css } =
   createStitches({
@@ -9,6 +10,7 @@ export const { config, styled, getCssText, theme, createTheme, css } =
         primary: '#78C4A1',
         loContrast: '#202023',
         hiContrast: '#FBFCFD',
+        ...slate,
       },
       shadows: {
         focus: '0 0 0 3px black',

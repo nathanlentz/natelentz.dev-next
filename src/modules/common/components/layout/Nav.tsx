@@ -1,15 +1,13 @@
 import { useEffect, useState } from 'react'
 import { motion, useViewportScroll } from 'framer-motion'
 import { styled } from 'stitches.config'
-import { ThemeToggle } from '..'
+import { Box, ThemeToggle } from '..'
 
 export const Nav: React.FC = () => {
   const { scrollY } = useViewportScroll()
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
 
   useEffect(() => {
-    setIsOpen(true)
-
     const unsubscribeY = scrollY.onChange((value) => {
       if (value > 100) {
         setIsOpen(false)
@@ -30,17 +28,17 @@ export const Nav: React.FC = () => {
           <NavListItem variants={liVariants}>Home</NavListItem>
           <NavListItem variants={liVariants}>About</NavListItem>
           <NavListItem variants={liVariants}>Blog</NavListItem>
+          <Box variants={liVariants} css={{ padding: '$2xs' }}>
+            <ThemeToggle />
+          </Box>
         </NavList>
       </NavWrapper>
       <MenuButton
         variants={buttonVariants}
         onClick={() => setIsOpen(true)}
-        initial={true}
+        initial={false}
         animate={!isOpen ? 'show' : 'hide'}
       ></MenuButton>
-      <ThemeToggleContainer>
-        <ThemeToggle />
-      </ThemeToggleContainer>
     </>
   )
 }
@@ -54,7 +52,7 @@ const NavWrapper = styled(motion.nav, {
 const NavList = styled(motion.ul, {})
 
 const NavListItem = styled(motion.li, {
-  padding: '10px',
+  padding: '$2xs',
   '&:hover': {
     cursor: 'pointer',
   },

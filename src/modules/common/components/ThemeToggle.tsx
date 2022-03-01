@@ -35,7 +35,7 @@ export const ThemeToggle: React.FC = () => {
 }
 
 const ToggleWrapper = styled(Grid, {
-  backgroundColor: 'white',
+  backgroundColor: '$slate3',
   height: 30,
   width: 90,
   borderRadius: '$pill',
@@ -48,6 +48,7 @@ interface IconButtonProps {
 }
 const IconButton = ({ icon, theme }: IconButtonProps) => {
   const { setTheme } = useTheme()
+  console.log({ icon, theme })
   const isActive = icon === theme
 
   return (
@@ -73,10 +74,10 @@ const StyledIconButton = styled('button', buttonReset, {
   variants: {
     isActive: {
       true: {
-        color: 'blue',
+        color: '$slate12',
       },
       false: {
-        color: 'tomato',
+        color: '$slate8',
       },
     },
   },
