@@ -9,7 +9,9 @@ export const RootLayout: React.FC = ({ children }) => {
     <>
       <DefaultSeo />
       <Nav />
-      <Main>{children}</Main>
+      <Main>
+        <Container>{children}</Container>
+      </Main>
       <Footer />
     </>
   )

@@ -18,11 +18,6 @@ const Home: NextPage = () => {
       <VisuallyHidden.Root>
         <h1>Home</h1>
       </VisuallyHidden.Root>
-      <Box
-        css={{
-          height: '1800px',
-        }}
-      ></Box>
     </>
   )
 }

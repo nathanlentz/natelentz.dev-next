@@ -12,9 +12,16 @@ export const buttonReset = css({
   fontSmooth: 'inherit',
   appearance: 'none',
   cursor: 'pointer',
-  transition: '$default',
-  transitionProperty: 'box-shadow',
+  transitionDuration: 'var(--transitions-duration)',
+  transitionTimingFunction: 'var(--transitions-timingFunction)',
+  transition: 'all',
+
   '&:focus': {
+    outline: 'none',
+    boxShadow: '$focus',
+  },
+
+  '&:hover': {
     outline: 'none',
     boxShadow: '$focus',
   },

@@ -1,9 +1,8 @@
-# Nate's Digital Garden
-
-### Important things
+# natelentz.dev
 
 - Next.js & Typescript
 - MDX
 - Stitches & Radix
 - Framer Motion
-- Solution architecture inspired by Tao of React
+- Prisma
+- PlanetScale

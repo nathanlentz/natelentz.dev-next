@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion, useViewportScroll } from 'framer-motion'
 import { styled } from 'stitches.config'
 import { Box, ThemeToggle } from '..'
+import { ListItem } from '../Text'
 
 export const Nav: React.FC = () => {
   const { scrollY } = useViewportScroll()
@@ -51,7 +52,7 @@ const NavWrapper = styled(motion.nav, {
 
 const NavList = styled(motion.ul, {})
 
-const NavListItem = styled(motion.li, {
+const NavListItem = styled(ListItem, {
   padding: '$2xs',
   '&:hover': {
     cursor: 'pointer',

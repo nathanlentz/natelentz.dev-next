@@ -1,29 +1,43 @@
 import type * as Stitches from '@stitches/react'
 import { createStitches } from '@stitches/react'
-import { slate } from '@radix-ui/colors'
+import { slate, slateDark } from '@radix-ui/colors'
 
 export const { config, styled, getCssText, theme, createTheme, css } =
   createStitches({
     theme: {
-      fonts: {},
+      fonts: {
+        primary: '"Poppins", sans-serif',
+        serif: '',
+      },
       colors: {
         primary: '#78C4A1',
         loContrast: '#202023',
         hiContrast: '#FBFCFD',
-        ...slate,
+        text1: '$hiContrast',
+        ...slateDark,
       },
       shadows: {
-        focus: '0 0 0 3px black',
+        focus: '0 0 0 3px var(--colors-slate10)',
       },
       transitions: {
-        default: '225ms cubic-bezier(0.4, 0, 0.2, 1)',
+        duration: '.15s',
+        timingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
       radii: {
         none: 0,
         round: '50%',
+        curved: '0.5rem',
         pill: '9999px',
       },
-      fontWeights: {},
+      fontWeights: {
+        regular: 400,
+        bold: 700,
+      },
+      lineHeights: {
+        tight: 1,
+        body: 1.5,
+        loose: 2,
+      },
       fontSizes: {
         1: 'clamp(0.80rem, 0.69rem + 0.48vw, 1.00rem)',
         2: 'clamp(1.00rem, 0.86rem + 0.60vw, 1.25rem)',
@@ -94,6 +108,7 @@ export const { config, styled, getCssText, theme, createTheme, css } =
 
 export const lightTheme = createTheme({
   colors: {
+    ...slate,
     hiContrast: '#202023',
     loContrast: '#FBFCFD',
   },
