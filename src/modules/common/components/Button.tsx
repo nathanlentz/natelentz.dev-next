@@ -1,4 +1,4 @@
-import { css } from 'stitches.config'
+import { css, styled } from 'stitches.config'
 
 export const buttonReset = css({
   border: 'none',
@@ -25,4 +25,10 @@ export const buttonReset = css({
     outline: 'none',
     boxShadow: '$focus',
   },
+})
+
+export const IconButton = styled('svg', {
+  width: '1.25rem',
+  height: '1.25rem',
+  color: '$hiContrast',
 })

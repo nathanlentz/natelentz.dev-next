@@ -12,6 +12,7 @@ export const text = css({
       6: { fontSize: '$6' },
       7: { fontSize: '$7' },
       8: { fontSize: '$8' },
+      9: { fontSize: '$9' },
     },
     color: {
       1: { color: '$text1' },
@@ -22,6 +23,7 @@ export const text = css({
     weight: {
       bold: { fontWeight: '$bold' },
       regular: { fontWeight: '$regular' },
+      boldItalic: { fontWeight: '$bold', fontStyle: 'italic' },
     },
     leading: {
       tight: { lineHeight: '$tight' },

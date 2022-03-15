@@ -74,12 +74,6 @@ const MenuButton = styled(motion.button, {
   color: '$dark',
 })
 
-const ThemeToggleContainer = styled(motion.div, {
-  position: 'fixed',
-  top: '2.8571vw',
-  right: '2.8571vw',
-})
-
 /* Framer Motion Variants */
 const ulVariants = {
   open: {

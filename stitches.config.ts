@@ -14,6 +14,7 @@ export const { config, styled, getCssText, theme, createTheme, css } =
         loContrast: '#202023',
         hiContrast: '#FBFCFD',
         text1: '$hiContrast',
+        text2: '$loContrast',
         ...slateDark,
       },
       shadows: {
@@ -47,6 +48,7 @@ export const { config, styled, getCssText, theme, createTheme, css } =
         6: 'clamp(2.44rem, 2.11rem + 1.47vw, 3.05rem)',
         7: 'clamp(3.05rem, 2.64rem + 1.84vw, 3.82rem)',
         8: 'clamp(3.82rem, 3.30rem + 2.30vw, 4.77rem)',
+        9: 'clamp(4.77rem, 4.00rem + 2.90vw, 5.56rem)',
       },
       space: {
         '3xs': '4px',
