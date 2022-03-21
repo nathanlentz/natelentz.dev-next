@@ -68,16 +68,16 @@ export const { config, styled, getCssText, theme, createTheme, css } =
         sh: '100vh',
         desktop: '1440px',
       },
-      media: {
-        bpsm: '(min-width: 640px)',
-        bpmd: '(min-width: 768px)',
-        bplg: '(min-width: 1024px)',
-        bpxl: '(min-width: 1280px)',
-        motion: '(prefers-reduced-motion)',
-        hover: '(any-hover: hover)',
-        dark: '(prefers-color-scheme: dark)',
-        light: '(prefers-color-scheme: light)',
-      },
+    },
+    media: {
+      bpsm: '(min-width: 640px)',
+      bpmd: '(min-width: 768px)',
+      bplg: '(min-width: 1024px)',
+      bpxl: '(min-width: 1280px)',
+      motion: '(prefers-reduced-motion)',
+      hover: '(any-hover: hover)',
+      dark: '(prefers-color-scheme: dark)',
+      light: '(prefers-color-scheme: light)',
     },
     utils: {
       p: (value: Stitches.PropertyValue<'padding'>) => ({

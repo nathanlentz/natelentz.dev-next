@@ -29,9 +29,7 @@ export const Nav: React.FC = () => {
           <NavListItem variants={liVariants}>Home</NavListItem>
           <NavListItem variants={liVariants}>About</NavListItem>
           <NavListItem variants={liVariants}>Blog</NavListItem>
-          <Box variants={liVariants} css={{ padding: '$2xs' }}>
-            <ThemeToggle />
-          </Box>
+          <Box variants={liVariants} css={{ padding: '$2xs' }}></Box>
         </NavList>
       </NavWrapper>
       <MenuButton
@@ -40,6 +38,9 @@ export const Nav: React.FC = () => {
         initial={false}
         animate={!isOpen ? 'show' : 'hide'}
       ></MenuButton>
+      <Box css={{ position: 'fixed', top: '2.8571vw', right: '2.8571vw' }}>
+        <ThemeToggle />
+      </Box>
     </>
   )
 }
@@ -53,9 +54,27 @@ const NavWrapper = styled(motion.nav, {
 const NavList = styled(motion.ul, {})
 
 const NavListItem = styled(ListItem, {
-  padding: '$2xs',
+  p: '$2xs',
+  position: 'relative',
+
   '&:hover': {
     cursor: 'pointer',
+  },
+
+  '&:before': {
+    content: ' ',
+    transition: 'transform .4s',
+    position: 'absolute',
+    right: '100%',
+    top: '50%',
+    height: '1px',
+    width: '2.8571vw',
+    transform: 'translate3d(-101%,0,0)',
+    background: '$hiContrast',
+  },
+
+  '&:hover:before': {
+    transform: 'translate3d(-20%,0,0) scaleX(.8);',
   },
 })
 
