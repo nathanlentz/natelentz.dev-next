@@ -7,7 +7,6 @@ export const RootLayout: React.FC = ({ children }) => {
   return (
     <>
       <Nav />
-      <MobileNav />
       <Main>{children}</Main>
       <Footer />
     </>

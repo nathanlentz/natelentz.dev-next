@@ -3,6 +3,7 @@ import { motion, useViewportScroll } from 'framer-motion'
 import { styled } from 'stitches.config'
 import { Box, ThemeToggle } from '..'
 import { ListItem } from '../Text'
+import { MobileNav } from './MobileNav'
 
 export const Nav: React.FC = () => {
   const { scrollY } = useViewportScroll()
@@ -31,6 +32,7 @@ export const Nav: React.FC = () => {
           <NavListItem variants={liVariants}>Blog</NavListItem>
           <Box variants={liVariants} css={{ padding: '$2xs' }}></Box>
         </NavList>
+        <MobileNav />
       </NavWrapper>
       <MenuButton
         variants={buttonVariants}
@@ -51,7 +53,13 @@ const NavWrapper = styled(motion.nav, {
   left: '2.8571vw',
 })
 
-const NavList = styled(motion.ul, {})
+const NavList = styled(motion.ul, {
+  display: 'none',
+
+  '@bpmd': {
+    display: 'block',
+  },
+})
 
 const NavListItem = styled(ListItem, {
   p: '$2xs',
@@ -91,6 +99,11 @@ const MenuButton = styled(motion.button, {
   height: '50px',
   width: '50px',
   color: '$dark',
+  display: 'none',
+
+  '@bpmd': {
+    display: 'block',
+  },
 })
 
 /* Framer Motion Variants */

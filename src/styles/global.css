@@ -12,6 +12,10 @@ ul {
   margin: 0;
 }
 
+*[data-hide='true'] {
+  display: none;
+}
+
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
