@@ -5,8 +5,6 @@ import { styled } from 'stitches.config'
 import { useIsMounted } from '@utils/common/hooks'
 import { buttonReset, IconButton } from './Button'
 
-type Theme = 'light' | 'dark' | 'system'
-
 export const ThemeToggle: React.FC = () => {
   const { resolvedTheme, setTheme } = useTheme()
   const isMounted = useIsMounted()

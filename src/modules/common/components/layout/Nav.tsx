@@ -4,6 +4,7 @@ import { styled } from 'stitches.config'
 import { Box, ThemeToggle } from '..'
 import { ListItem } from '../Text'
 import { MobileNav } from './MobileNav'
+import Link from 'next/link'
 
 export const Nav: React.FC = () => {
   const { scrollY } = useViewportScroll()
@@ -27,9 +28,15 @@ export const Nav: React.FC = () => {
     <>
       <NavWrapper initial={false} animate={isOpen ? 'open' : 'closed'}>
         <NavList variants={ulVariants}>
-          <NavListItem variants={liVariants}>Home</NavListItem>
-          <NavListItem variants={liVariants}>About</NavListItem>
-          <NavListItem variants={liVariants}>Blog</NavListItem>
+          <NavListItem variants={liVariants}>
+            <Link href={'/'}>Home</Link>
+          </NavListItem>
+          <NavListItem variants={liVariants}>
+            <Link href={'/writing'}>Writing</Link>
+          </NavListItem>
+          <NavListItem variants={liVariants}>
+            <Link href={'/contact'}>Contact</Link>
+          </NavListItem>
           <Box variants={liVariants} css={{ padding: '$2xs' }}></Box>
         </NavList>
         <MobileNav />
@@ -40,7 +47,14 @@ export const Nav: React.FC = () => {
         initial={false}
         animate={!isOpen ? 'show' : 'hide'}
       ></MenuButton>
-      <Box css={{ position: 'fixed', top: '2.8571vw', right: '2.8571vw' }}>
+      <Box
+        css={{
+          position: 'fixed',
+          top: '2.8571vw',
+          right: '2.8571vw',
+          zIndex: 99,
+        }}
+      >
         <ThemeToggle />
       </Box>
     </>
@@ -48,13 +62,15 @@ export const Nav: React.FC = () => {
 }
 
 const NavWrapper = styled(motion.nav, {
-  position: 'fixed',
+  position: 'relative',
   top: '2.8571vw',
   left: '2.8571vw',
 })
 
 const NavList = styled(motion.ul, {
   display: 'none',
+  position: 'fixed',
+  zIndex: 11,
 
   '@bpmd': {
     display: 'block',
@@ -64,6 +80,10 @@ const NavList = styled(motion.ul, {
 const NavListItem = styled(ListItem, {
   p: '$2xs',
   position: 'relative',
+
+  a: {
+    textDecoration: 'none',
+  },
 
   '&:hover': {
     cursor: 'pointer',
@@ -100,6 +120,7 @@ const MenuButton = styled(motion.button, {
   width: '50px',
   color: '$dark',
   display: 'none',
+  zIndex: 10,
 
   '@bpmd': {
     display: 'block',

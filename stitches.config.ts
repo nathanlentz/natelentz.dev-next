@@ -49,6 +49,7 @@ export const { config, styled, getCssText, theme, createTheme, css } =
         7: 'clamp(3.05rem, 2.64rem + 1.84vw, 3.82rem)',
         8: 'clamp(3.82rem, 3.30rem + 2.30vw, 4.77rem)',
         9: 'clamp(4.77rem, 4.00rem + 2.90vw, 5.56rem)',
+        10: 'clamp(5.56em, 5.50rem + 3.40vw, 6.60rem)',
       },
       space: {
         '3xs': '4px',
@@ -98,7 +99,7 @@ export const { config, styled, getCssText, theme, createTheme, css } =
         marginLeft: value,
         marginRight: value,
       }),
-      my: (value: Stitches.PropertyValue<'padding'>) => ({
+      my: (value: Stitches.PropertyValue<'margin'>) => ({
         marginTop: value,
         marginBottom: value,
       }),

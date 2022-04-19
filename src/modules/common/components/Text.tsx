@@ -50,8 +50,11 @@ export const text = css({
 export const Text = styled('span', text)
 export const H1 = styled('h1', text, {
   lineHeight: '$tight',
+  my: '$l',
 })
-export const H2 = styled('h2', text)
+export const H2 = styled('h2', text, {
+  py: '$xs',
+})
 export const H3 = styled('h3', text)
 export const H4 = styled('h4', text)
 export const H5 = styled('h5', text)

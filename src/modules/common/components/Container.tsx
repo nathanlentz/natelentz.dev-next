@@ -51,10 +51,10 @@ export const Container: React.FC<ContainerProps> = (props) => {
 
 const Wrapper = styled('div', {
   width: '$full',
-  minHeight: '$sh',
   d: 'flex',
   ai: 'center',
   flexFlow: 'column',
-  height: '$full',
+  // minHeight: '$sh',
+  // height: '$full',
   px: '$s',
 })

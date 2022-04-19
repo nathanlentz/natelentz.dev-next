@@ -16,6 +16,18 @@ ul {
   display: none;
 }
 
+a:visited {
+  color: var(--colors-hiContrast);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+h1 span {
+  display: flex;
+}
+
 @font-face {
   font-family: 'Poppins';
   font-style: normal;

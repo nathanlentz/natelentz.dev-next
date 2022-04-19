@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { useIsMounted } from '@utils/common/hooks'
 import { styled } from 'stitches.config'
 import { buttonReset } from '../Button'
@@ -36,14 +37,21 @@ export const MobileNav: React.FC = () => {
         <MenuIcon data-hide={isMenuOpen} />
         <XIcon data-hide={!isMenuOpen} />
       </MobileNavButton>
-      {isMenuOpen && (
-        <Menu>
-          <MenuItem>Writing</MenuItem>
-          <MenuItem>About</MenuItem>
-          <MenuItem>Work</MenuItem>
-          <MenuItem>Contact</MenuItem>
-        </Menu>
-      )}
+      <Menu
+        variants={animateMenu}
+        animate={isMenuOpen ? 'show' : 'hide'}
+        initial="hide"
+      >
+        <MenuItem>
+          <Link href={'/'}>Home</Link>
+        </MenuItem>
+        <MenuItem>
+          <Link href={'/writing'}>Writing</Link>
+        </MenuItem>
+        <MenuItem>
+          <Link href={'/contact'}>Contact</Link>
+        </MenuItem>
+      </Menu>
     </MobileNavWrapper>
   )
 }
@@ -74,12 +82,34 @@ const Menu = styled(motion.ul, {
 })
 
 const MenuItem = styled(motion.li, {
-  fontSize: '$7',
-  fontWeight: '$bold',
-  color: '$loContrast',
-  '-webkit-text-stroke': '1.5px var(--colors-hiContrast)',
-  textTransform: 'uppercase',
+  'a:-webkit-any-link': {
+    fontSize: '$7',
+    fontWeight: '$bold',
+    color: '$loContrast',
+    '-webkit-text-stroke': '1.5px var(--colors-hiContrast)',
+    textTransform: 'uppercase',
+    textDecoration: 'none',
+  },
 })
+
+const animateMenu = {
+  hide: {
+    opacity: 0,
+    y: -100,
+    transition: {
+      duration: 0.2,
+      ease: 'easeInOut',
+    },
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.2,
+      ease: 'circOut',
+    },
+  },
+}
 
 function MenuIcon(props: JSX.IntrinsicElements['svg']) {
   return (

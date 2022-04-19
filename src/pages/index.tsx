@@ -1,8 +1,10 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next'
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
 import { Box, Grid, H1 } from '@common/components'
 import { Container } from '@common/components/Container'
-import { styled } from 'stitches.config'
+import { Hero } from '@home/components/Hero'
+import { WordList } from '@common/components/WordList'
+import { RecentWriting } from '@home/components/RecentWriting'
 
 const Home: NextPage = () => {
   return (
@@ -10,17 +12,21 @@ const Home: NextPage = () => {
       <VisuallyHidden.Root>
         <h1>Home</h1>
       </VisuallyHidden.Root>
-      <Grid css={{ p: '20vh 6vw', maxWidth: '1200px', margin: 'auto' }}>
-        <Hero weight="boldItalic">Nate Lentz</Hero>
+      <Grid css={{ p: '20vh 5vw', maxWidth: '1200px', margin: 'auto' }}>
+        <Hero />
+        {/* <WordList /> */}
+        <RecentWriting />
       </Grid>
-      <Box css={{ height: '1800px' }} />
     </Container>
   )
 }
 
-const Hero = styled(H1, {
-  fontSize: '$8',
-  '@bpmd': { fontSize: '$9' },
-})
+export const getStaticProps: GetStaticProps<{
+  recentWritings: any[]
+}> = () => {
+  return {
+    props: { recentWritings: [] },
+  }
+}
 
 export default Home
