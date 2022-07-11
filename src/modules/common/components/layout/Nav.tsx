@@ -120,7 +120,7 @@ const MenuButton = styled(motion.button, {
   width: '50px',
   color: '$dark',
   display: 'none',
-  zIndex: 10,
+  zIndex: 99,
 
   '@bpmd': {
     display: 'block',

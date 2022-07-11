@@ -1,16 +1,19 @@
 import { motion } from 'framer-motion'
 import { styled } from 'stitches.config'
-import { H1 } from '@common/components'
+import { AnimateEntry, Box, Grid, H1, Stack, Text } from '@common/components'
 import { AnimatedLine } from '@common/components/AnimatedLine'
+import Image from 'next/image'
+import heroPic from '../../../../public/images/hero-3.jpg'
 
 export const Hero: React.FC = () => {
   return (
-    <>
+    <Box>
       <HeroText weight="boldItalic">
         <span className="overflow-hidden">
           <motion.span
             variants={heroAnimate}
             initial="initial"
+            animate="enter"
             whileInView="enter"
             viewport={{ once: true }}
           >
@@ -18,9 +21,47 @@ export const Hero: React.FC = () => {
           </motion.span>
         </span>
       </HeroText>
-    </>
+      <Box
+        css={{
+          marginTop: '100px',
+          position: 'relative',
+        }}
+      >
+        <AnimatedLine axis="y" position="left" css={{ zIndex: '10' }} />
+        <ImageStack>
+          <AnimateEntry>
+            <ImageBox>
+              <Image
+                src={heroPic}
+                alt="Picture of Nate and Rosie"
+                priority={true}
+              />
+            </ImageBox>
+          </AnimateEntry>
+        </ImageStack>
+      </Box>
+    </Box>
   )
 }
+
+const ImageStack = styled(Stack, {
+  paddingTop: '25px',
+  paddingBottom: '25px',
+
+  '@bpmd': {
+    marginLeft: '-50px',
+    paddingTop: '50px',
+    paddingBottom: '50px',
+  },
+})
+
+const ImageBox = styled(Box, {
+  width: '100%',
+
+  '@bpmd': {
+    width: '66%',
+  },
+})
 
 const HeroText = styled(motion.h1, H1, {
   fontSize: '$8',

@@ -1,9 +1,8 @@
-import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
-import { Box, Grid, H1 } from '@common/components'
+import { Grid } from '@common/components'
 import { Container } from '@common/components/Container'
 import { Hero } from '@home/components/Hero'
-import { WordList } from '@common/components/WordList'
 import { RecentWriting } from '@home/components/RecentWriting'
 
 const Home: NextPage = () => {

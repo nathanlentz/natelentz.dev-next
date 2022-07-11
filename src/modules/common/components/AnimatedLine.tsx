@@ -1,23 +1,25 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
 import { styled } from 'stitches.config'
 
 export const AnimatedLine: React.FC<AnimatedLineProps> = ({
   axis,
   position,
+  css,
 }) => {
   const getPosition = (): {} => {
     switch (position) {
       case 'left':
-        return { left: 0 }
+        return { ...css, left: 0 }
       case 'top':
-        return { top: 0 }
+        return { ...css, top: 0 }
       case 'bottom':
-        return { bottom: 0 }
+        return { ...css, bottom: 0 }
       case 'right':
-        return { right: 0 }
+        return { ...css, right: 0 }
       default:
-        return {}
+        return {
+          ...css,
+        }
     }
   }
 
@@ -36,6 +38,7 @@ export const AnimatedLine: React.FC<AnimatedLineProps> = ({
 export interface AnimatedLineProps {
   axis: 'x' | 'y'
   position: 'top' | 'bottom' | 'left' | 'right'
+  css: {}
 }
 
 const Line = styled(motion.span, {

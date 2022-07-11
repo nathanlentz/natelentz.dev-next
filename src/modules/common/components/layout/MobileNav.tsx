@@ -42,13 +42,13 @@ export const MobileNav: React.FC = () => {
         animate={isMenuOpen ? 'show' : 'hide'}
         initial="hide"
       >
-        <MenuItem>
+        <MenuItem onClick={() => setIsMenuOpen(false)}>
           <Link href={'/'}>Home</Link>
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={() => setIsMenuOpen(false)}>
           <Link href={'/writing'}>Writing</Link>
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={() => setIsMenuOpen(false)}>
           <Link href={'/contact'}>Contact</Link>
         </MenuItem>
       </Menu>
@@ -95,6 +95,7 @@ const MenuItem = styled(motion.li, {
 const animateMenu = {
   hide: {
     opacity: 0,
+    display: 'none',
     y: -100,
     transition: {
       duration: 0.2,
@@ -103,6 +104,7 @@ const animateMenu = {
   },
   show: {
     opacity: 1,
+    display: 'block',
     y: 0,
     transition: {
       duration: 0.2,
