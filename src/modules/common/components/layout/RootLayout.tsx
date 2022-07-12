@@ -1,7 +1,6 @@
 import { Nav } from './Nav'
 import { Footer } from './Footer'
 import { styled } from 'stitches.config'
-import { MobileNav } from './MobileNav'
 
 export const RootLayout: React.FC = ({ children }) => {
   return (

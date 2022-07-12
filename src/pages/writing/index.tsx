@@ -1,7 +1,6 @@
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
-import { Box, Grid, H1 } from '@common/components'
+import { AnimateEntry, Box, Grid, H1 } from '@common/components'
 import { Container } from '@common/components/Container'
-import { styled } from 'stitches.config'
 
 const Writings = () => {
   return (
@@ -10,7 +9,11 @@ const Writings = () => {
         <h1>Writing</h1>
       </VisuallyHidden.Root>
       <Grid css={{ p: '20vh 6vw', maxWidth: '1200px', margin: 'auto' }}>
-        Writing
+        <AnimateEntry direction="from-bottom">
+          <Box css={{ textAlign: 'center' }}>
+            <H1>Writing</H1>
+          </Box>
+        </AnimateEntry>
       </Grid>
       <Box css={{ height: '1800px' }} />
     </Container>

@@ -23,13 +23,13 @@ export const Hero: React.FC = () => {
       </HeroText>
       <Box
         css={{
-          marginTop: '100px',
+          marginTop: '50px',
           position: 'relative',
         }}
       >
         <AnimatedLine axis="y" position="left" css={{ zIndex: '10' }} />
         <ImageStack>
-          <AnimateEntry>
+          <AnimateEntry direction="from-left">
             <ImageBox>
               <Image
                 src={heroPic}
@@ -49,7 +49,7 @@ const ImageStack = styled(Stack, {
   paddingBottom: '25px',
 
   '@bpmd': {
-    marginLeft: '-50px',
+    marginLeft: '50px',
     paddingTop: '50px',
     paddingBottom: '50px',
   },

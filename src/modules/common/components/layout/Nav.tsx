@@ -35,7 +35,7 @@ export const Nav: React.FC = () => {
             <Link href={'/writing'}>Writing</Link>
           </NavListItem>
           <NavListItem variants={liVariants}>
-            <Link href={'/contact'}>Contact</Link>
+            <Link href={'/uses'}>Uses</Link>
           </NavListItem>
           <Box variants={liVariants} css={{ padding: '$2xs' }}></Box>
         </NavList>
@@ -120,7 +120,6 @@ const MenuButton = styled(motion.button, {
   width: '50px',
   color: '$dark',
   display: 'none',
-  zIndex: 99,
 
   '@bpmd': {
     display: 'block',
@@ -156,6 +155,7 @@ const liVariants = {
 
 const buttonVariants = {
   show: {
+    zIndex: 99,
     y: 0,
     opacity: 1,
     transition: {
@@ -163,6 +163,7 @@ const buttonVariants = {
     },
   },
   hide: {
+    zIndex: 0,
     y: -25,
     opacity: 0,
     transition: {
