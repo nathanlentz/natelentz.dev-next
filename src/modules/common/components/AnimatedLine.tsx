@@ -38,7 +38,7 @@ export const AnimatedLine: React.FC<AnimatedLineProps> = ({
 export interface AnimatedLineProps {
   axis: 'x' | 'y'
   position: 'top' | 'bottom' | 'left' | 'right'
-  css: {}
+  css?: {}
 }
 
 const Line = styled(motion.span, {
