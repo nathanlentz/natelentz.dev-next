@@ -1,6 +1,5 @@
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
-import { AnimateEntry, Box, Grid, H1 } from '@common/components'
-import { Container } from '@common/components/Container'
+import { AnimateEntry, Box, Grid, H1, Text, Container } from '@common/components'
 
 const Writings = () => {
   return (
@@ -14,8 +13,10 @@ const Writings = () => {
             <H1>Writing</H1>
           </Box>
         </AnimateEntry>
+        <Box css={{ height: '1800px', textAlign: 'center' }}>
+          <Text>Come back soon!</Text>
+        </Box>
       </Grid>
-      <Box css={{ height: '1800px' }} />
     </Container>
   )
 }

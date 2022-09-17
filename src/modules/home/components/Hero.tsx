@@ -17,7 +17,8 @@ export const Hero: React.FC = () => {
             whileInView="enter"
             viewport={{ once: true }}
           >
-            <span>Nate Lentz</span>
+            <span>Nate</span>
+            <span>Lentz</span>
           </motion.span>
         </span>
       </HeroText>
@@ -45,11 +46,14 @@ export const Hero: React.FC = () => {
 }
 
 const ImageStack = styled(Stack, {
+  marginLeft: '15px',
+  marginRight: '15px',
   paddingTop: '25px',
   paddingBottom: '25px',
 
   '@bpmd': {
     marginLeft: '50px',
+    marginRight: '50px',
     paddingTop: '50px',
     paddingBottom: '50px',
   },
@@ -57,10 +61,6 @@ const ImageStack = styled(Stack, {
 
 const ImageBox = styled(Box, {
   width: '100%',
-
-  '@bpmd': {
-    width: '66%',
-  },
 })
 
 const HeroText = styled(motion.h1, H1, {
@@ -68,6 +68,7 @@ const HeroText = styled(motion.h1, H1, {
   margin: 0,
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'center',
   '@bpmd': { fontSize: '$9' },
   position: 'relative',
 })
@@ -84,6 +85,7 @@ const heroAnimate = {
       duration: 0.6,
       ease: 'circOut',
       delay: 0.25,
+      staggerChildren: 0.05,
     },
   },
   initial: {

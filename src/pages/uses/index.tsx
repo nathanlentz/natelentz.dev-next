@@ -1,5 +1,5 @@
-import { Box, Grid, Container, H1, AnimateEntry } from '@common/components'
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
+import { Box, Grid, Container, H1, AnimateEntry, Text } from '@common/components'
 
 const Uses: React.FC = () => {
   return (
@@ -19,8 +19,10 @@ const Uses: React.FC = () => {
             <H1>Uses</H1>
           </Box>
         </AnimateEntry>
+        <Box css={{ height: '1800px', textAlign: 'center' }}>
+          <Text>Come back soon!</Text>
+        </Box>
       </Grid>
-      <Box css={{ height: '1800px' }} />
     </Container>
   )
 }

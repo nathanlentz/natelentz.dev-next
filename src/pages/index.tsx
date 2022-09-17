@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       <Grid css={{ p: '20vh 5vw', maxWidth: '1200px', margin: 'auto' }}>
         <Hero />
         {/* <WordList /> */}
-        <RecentWriting />
+        {/* <RecentWriting /> */}
       </Grid>
     </Container>
   )
