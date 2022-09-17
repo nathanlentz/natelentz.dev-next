@@ -13,7 +13,7 @@ const Writings = () => {
             <H1>Writing</H1>
           </Box>
         </AnimateEntry>
-        <Box css={{ height: '1800px', textAlign: 'center' }}>
+        <Box css={{ textAlign: 'center' }}>
           <Text>Come back soon!</Text>
         </Box>
       </Grid>

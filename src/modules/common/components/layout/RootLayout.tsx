@@ -4,11 +4,11 @@ import { styled } from 'stitches.config'
 
 export const RootLayout: React.FC = ({ children }) => {
   return (
-    <>
+    <div className="root-layout">
       <Nav />
       <Main>{children}</Main>
       <Footer />
-    </>
+    </div>
   )
 }
 
