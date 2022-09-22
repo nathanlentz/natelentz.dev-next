@@ -34,7 +34,7 @@ export const Container: React.FC<ContainerProps> = (props) => {
         />
         <link rel="canonical" href={`https://natelentz.dev${router.asPath}`} />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Nate Eentz" />
+        <meta property="og:site_name" content="Nate Lentz" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
