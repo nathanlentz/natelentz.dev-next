@@ -36,6 +36,7 @@ export const Hero: React.FC = () => {
                 src={heroPic}
                 alt="Picture of Nate and Rosie"
                 priority={true}
+                placeholder="blur"
               />
             </ImageBox>
           </AnimateEntry>
@@ -61,6 +62,11 @@ const ImageStack = styled(Stack, {
 
 const ImageBox = styled(Box, {
   width: '100%',
+
+  img: {
+    width: '100%',
+    height: 'auto'
+  }
 })
 
 const HeroText = styled(motion.h1, H1, {
