@@ -1,11 +1,13 @@
 import './globals.css'
-import localFont from '@next/font/local';
+import { Poppins } from '@next/font/google';
 import { cn } from '@/utils/cn'
+import { ThemeProvider } from '@/components/theme-provider';
+import { MainNav } from '@/components/main-nav';
 
-const poppins = localFont({
-  src: '../public/fonts/Poppins-Bold.ttf',
-  weight: '700',
+const poppins = Poppins({
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-poppins',
+  subsets: ['latin'],
   display: 'swap',
 });
 
@@ -23,8 +25,11 @@ export default function RootLayout({
         )}
       >
       <head></head>
-      <body className="max-w-4xl mb-40 flex flex-col md:flex-row lg:mx-auto">
-        {children}
+      <body>
+        <MainNav />
+        <main className="flex md:min-h-screen flex-col py-10">
+          {children}
+        </main>
       </body>
     </html>
   )
