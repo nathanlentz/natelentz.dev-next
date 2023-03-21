@@ -1,11 +1,14 @@
 import { style } from '@vanilla-extract/css'
 
 import { sprinkles } from '@/styles/sprinkles.css'
+import { theme } from '@/styles/theme.css'
 
 const root = style([
   {
     width: '100%',
-    marginTop: '8px'
+    marginTop: '32px',
+    position: 'fixed',
+    zIndex: 9999
   },
   sprinkles({
     display: 'flex',
@@ -16,26 +19,56 @@ const root = style([
 ])
 
 const wrapper = style({
+  backgroundColor: theme.vars.colors.uiBg,
   border: '2px solid',
   borderRadius: '48px',
 })
 
 const navList = style([
   {
-    paddingLeft: '8px',
-    paddingRight: '8px'
+    padding: '8px'
   },
   sprinkles({
-    display: 'flex'
+    display: 'flex',
+    alignItems: 'center'
   })
 ])
 
-const navItem = style({
+const navItem = style([
+  sprinkles({
+    fontWeight: 'bold'
+  }),
+  {
+    marginRight: '24px',
+    ':hover': {
+      textDecoration: 'underline'
+    }
+  }
+])
+
+const activeNavItem = style({
+  backgroundColor: 'white',
+  color: 'black',
+  borderRadius: '48px'
+})
+
+const location = style({
+  marginRight: '24px'
+})
+
+const homeIcon = style({
+  borderRadius: '50%',
+  height: '31px',
+  width: '31px',
+  backgroundColor: theme.vars.colors.primary
 })
 
 export const navStyles = {
   root,
   wrapper,
   navList,
-  navItem
+  navItem,
+  homeIcon,
+  location,
+  activeNavItem
 } as const

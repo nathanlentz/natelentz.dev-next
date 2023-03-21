@@ -11,7 +11,9 @@ export const RootLayout = ({
     <>
       <div className={s.container}>
         <Navigation />
-        <main className={s.main}>{children}</main>
+        <div className={s.wrapper}>
+          <main className={s.main}>{children}</main>
+        </div>
         {/* <Footer /> */}
       </div>
     </>

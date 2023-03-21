@@ -1,7 +1,7 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles'
 import { BREAKPOINTS, theme } from './theme.css'
 
-const { tokens } = theme  
+const { tokens, vars } = theme  
 
 const responsiveProperties = defineProperties({
   conditions: {
@@ -43,10 +43,49 @@ const responsiveProperties = defineProperties({
       'center',
       'flex-end',
     ],
+    height: tokens.sizes,
+    width: tokens.sizes,
+    maxHeight: tokens.sizes,
+    maxWidth: tokens.sizes,
+    minHeight: tokens.sizes,
+    minWidth: tokens.sizes,
+    textAlign: ['left', 'center', 'right'],
     alignContent: ['start', 'end', 'center'],
+    fontSize: theme.tokens.fontSizes,
   }
 })
 
-export const sprinkles = createSprinkles(responsiveProperties)
+const nonResponsiveProperties = defineProperties({
+  properties: {
+    // borderRadius: tokens.radii,
+    // zIndex: tokens.zIndices,
+    lineHeight: tokens.lineHeights,
+    fontWeight: tokens.fontWeights,
+    // transition: tokens.transitions,
+    fontFamily: tokens.fonts,
+    flexWrap: ['wrap', 'nowrap'],
+    top: tokens.space,
+    bottom: tokens.space,
+    left: tokens.space,
+    right: tokens.space,
+    shorthands: {
+      inset: ['top', 'bottom', 'left', 'right'],
+    },
+  },
+});
+
+const interactiveProperties = defineProperties({
+  defaultCondition: 'initial',
+  conditions: {
+    initial: {},
+    hover: { selector: '&:hover' },
+  },
+  properties: {
+    color: vars.colors,
+    backgroundColor: vars.colors,
+  },
+});
+
+export const sprinkles = createSprinkles(responsiveProperties, nonResponsiveProperties, interactiveProperties)
 
 export type Sprinkles = Parameters<typeof sprinkles>[0]

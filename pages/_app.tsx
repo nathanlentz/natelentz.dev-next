@@ -1,10 +1,14 @@
 import { AppProps } from 'next/app'
-import { Inter } from 'next/font/google'
+import { Inter, Poppins } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import { RootLayout } from '@/components/layout/root-layout'
 import '@/styles/global.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  style: ['normal', 'italic']
+})
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -12,9 +16,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       disableTransitionOnChange
       attribute="class"
       value={{ dark: 'dark-theme', light: 'light-theme' }}
-      enableSystem
     >
-      <div className={inter.className}>
+      <div className={poppins.className}>
         <RootLayout>
           <Component {...pageProps} />
         </RootLayout>
