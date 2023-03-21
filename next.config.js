@@ -1,8 +1,14 @@
+const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
+const withVanillaExtract = createVanillaExtractPlugin();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  swcMinify: false,
+  reactStrictMode: true,
+  outputFileTracing: true,
   experimental: {
-    appDir: true,
+    appDir: false,
   },
 }
 
-module.exports = nextConfig
+module.exports = withVanillaExtract(nextConfig)

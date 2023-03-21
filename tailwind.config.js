@@ -65,5 +65,5 @@ module.exports = {
     exitToLeft: 'exitToLeft 250ms ease',
     exitToRight: 'exitToRight 250ms ease',
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [],
 }
