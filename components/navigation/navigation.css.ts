@@ -18,20 +18,25 @@ const root = style([
   })
 ])
 
-const wrapper = style({
-  backgroundColor: theme.vars.colors.uiBg,
-  border: '2px solid',
-  borderRadius: '48px',
-})
+const wrapper = style([
+  {
+    backgroundColor: theme.vars.colors.uiBg,
+    border: '2px solid',
+    borderRadius: '48px',
+  }
+])
 
 const navList = style([
   {
-    padding: '8px'
-  },
-  sprinkles({
-    display: 'flex',
-    alignItems: 'center'
-  })
+    padding: '8px',
+    display: 'none',
+    '@media': {
+      ['(min-width: 1024px)']: {
+        display: 'flex',
+        alignItems: 'center'
+      }
+    }
+  }
 ])
 
 const navItem = style([

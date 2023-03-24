@@ -4,12 +4,13 @@ import { BREAKPOINTS, theme } from './theme.css'
 const { tokens, vars } = theme  
 
 const responsiveProperties = defineProperties({
+  defaultCondition: 'initial',
   conditions: {
-    mobile: {},
-    tablet: { '@media': 'screen and (min-width: 768px)' },
-    desktop: { '@media': 'screen and (min-width: 1024px)' }
+    initial: {},
+    bp1: { '@media': 'screen and (min-width: 640px)'},
+    bp2: { '@media': 'screen and (min-width: 768px)' },
+    bp3: { '@media': 'screen and (min-width: 1024px)' }
   },
-  defaultCondition: 'mobile',
   properties: {
     position: ['relative', 'absolute', 'fixed', 'sticky'],
     display: [

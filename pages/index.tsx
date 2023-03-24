@@ -1,6 +1,16 @@
-import HomeHero from "@/components/home-hero/home-hero"
+import { InferGetStaticPropsType } from 'next'
+import HomeHero from '@/components/home-hero/home-hero'
+import { allWritings, Writing } from 'contentlayer/generated'
 
-const Index = () => {
+export async function getStaticProps() {
+  const writings = allWritings
+  return { props: { writings } }
+}
+
+const Index = ({ writings }: InferGetStaticPropsType<typeof getStaticProps>) => {
+
+  console.log(writings)
+  
   return (
     <>
       <HomeHero />

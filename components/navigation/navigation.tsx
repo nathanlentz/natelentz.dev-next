@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { navStyles } from './navigation.css'
 import ThemeToggle from '../theme-toggle/theme-toggle'
 import { useRouter } from 'next/router'
+import MobileNav from './mobile-nav'
 
 const Navigation = () => {
   const router = useRouter()
@@ -13,6 +14,7 @@ const Navigation = () => {
   return (
     <div className={navStyles.root}>
       <NavigationMenu.Root className={navStyles.wrapper}>
+        <MobileNav />
         <NavigationMenu.List className={navStyles.navList}>
           <NavigationMenu.Item className={navStyles.navItem}>
             <Link href="/">
@@ -48,3 +50,4 @@ const Navigation = () => {
 }
 
 export default Navigation
+
