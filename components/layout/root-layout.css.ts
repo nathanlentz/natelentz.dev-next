@@ -15,7 +15,7 @@ export const container = style([
 
 export const wrapper = style([
   {
-    marginTop: '80px'
+    marginTop: '140px'
   },
   sprinkles({
     maxWidth: 'channel',

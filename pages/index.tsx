@@ -8,8 +8,6 @@ export async function getStaticProps() {
 }
 
 const Index = ({ writings }: InferGetStaticPropsType<typeof getStaticProps>) => {
-
-  console.log(writings)
   
   return (
     <>

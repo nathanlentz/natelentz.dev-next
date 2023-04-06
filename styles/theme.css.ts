@@ -36,6 +36,8 @@ const themeVars = createGlobalThemeContract(
       ...colorsDark,
       uiBg: null,
       text: null,
+      surface1: null,
+      surface2: null,
       primary: null
     },
   },
@@ -47,6 +49,8 @@ createGlobalTheme('html.dark-theme', themeVars, {
     ...colorsDark,
     uiBg: colorsDark.slate1,
     text: 'white',
+    surface1: colorsDark.slate3,
+    surface2: colorsDark.slate12,
     primary: '#78C4A1'
   },
 })
@@ -55,6 +59,8 @@ createGlobalTheme('html.light-theme', themeVars, {
   colors: {
     ...colorsLight,
     uiBg: colorsLight.slate1,
+    surface1: colorsLight.slate3,
+    surface2: colorsLight.slate12,
     text: 'black',
     primary: '#78C4A1'
   },

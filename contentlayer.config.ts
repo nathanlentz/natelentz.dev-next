@@ -5,7 +5,8 @@ import rehypePrettyCode, { Options } from 'rehype-pretty-code';
 
 export const Writing = defineDocumentType(() => ({
   name: 'Writing',
-  filePathPattern: `**/*.md`,
+  filePathPattern: `**/*.mdx`,
+  contentType: 'mdx',
   fields: {
     title: {
       type: 'string',
@@ -26,6 +27,10 @@ export const Writing = defineDocumentType(() => ({
       description: 'If the writing should be featured',
       default: false,
       required: false
+    },
+    tags: {
+      type: 'list',
+      of: { type: 'string' },
     },
     status: {
       type: 'enum',

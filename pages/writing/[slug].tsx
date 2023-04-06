@@ -1,10 +1,17 @@
 import { allWritings, Writing } from 'contentlayer/generated'
+import { useMDXComponent } from 'next-contentlayer/hooks';
+import { MDX_ELEMENTS } from '@/utils/mdx.constants';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
+import { pageHeader } from '@/styles/primitives/text.css';
 
 const Writing = ({ writing }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const MDXContent = useMDXComponent(writing.body.code)
   return (
-    <h1>{ writing.title }
-    </h1>
+    <>
+      <h1 className={pageHeader}>{ writing.title }</h1>
+      <MDXContent components={{ ...MDX_ELEMENTS }}/>
+    </>
+    
   )
 }
 

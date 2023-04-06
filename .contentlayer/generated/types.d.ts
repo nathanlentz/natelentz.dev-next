@@ -21,9 +21,10 @@ export type Writing = {
   spoiler?: string | undefined
   /** If the writing should be featured */
   featured: boolean
+  tags?: string[] | undefined
   status: 'draft' | 'published'
-  /** Markdown file body */
-  body: Markdown
+  /** MDX file body */
+  body: MDX
   slug: string
 }  
 

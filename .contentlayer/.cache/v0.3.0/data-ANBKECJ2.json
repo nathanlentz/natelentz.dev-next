@@ -1,0 +1,33 @@
+{
+  "cacheItemsMap": {
+    "husky-pretty-quick.mdx": {
+      "document": {
+        "title": "Pre-Commit Linting with Husky & Prettier",
+        "date": "2021-04-30T04:00:00Z",
+        "spoiler": "Learn how to setup pre-commit linting using Prettier and newer versions of Husky",
+        "featured": false,
+        "tags": [
+          "tools"
+        ],
+        "status": "published",
+        "body": {
+          "raw": "\n_This tutorial was written for Husky versions 5 and 6._\n\nPre-Commit hooks are a neat way to help keep code bases clean and avoid introducing unnecessary noise during the code review process. I commonly use pre commit hooks to run linting, tests, or check for other trivial things that need not be pointed out in Pull Requests leaving more time to focus on more important changes.\n\n[Husky](https://github.com/typicode/husky) makes using Git hooks quite easy but setup can be confusing with newer versions. Since v5 support of an entry in the `package.json` has been dropped so a lot of tutorials are out of date.\n\n### Requirements\n\n- Prettier (installed as a dev dependency in your project)\n- npm or yarn\n\n### Install Husky\n\nWe can start by adding [Husky to our project](https://typicode.github.io/husky/#/?id=install). If you are already using an older version of Husky (v4), you can skip the rest of this blog and just follow [this migration guide](https://typicode.github.io/husky/#/?id=migrate-from-v4-to-v6).\n\n```bash\nnpx husky-init && npm install       # npm\nnpx husky-init && yarn install       # Yarn 1\nyarn dlx husky-init --yarn2 && yarn install # Yarn 2\n```\n\nThis does a few things:\n\n- A `.husky` directory added to the root of the project. This is the default Husky directory where hooks will live.\n- A simple `pre-commit` hook is created under this directory which we can tailor as we see fit.\n\n### Install pretty-quick\n\n[pretty-quick](https://github.com/azz/pretty-quick#readme) will run Prettier on your changed files. Add this as a dev dependency to your project.\n\n```bash\nnpm install --d pretty-quick        # npm\nyarn add -D pretty-quick            # Yarn\n```\n\n### Configure the Hook\n\nTo run pretty-quick as part of our pre-commit hook, we simply need to add a command for it\n\nAdd to package.json a new script to run from the hook\n\n```json\n{\n  ...,\n  \"pre-commit-checks\": \"pretty-quick --staged\"\n}\n```\n\nThen add this script to the pre-commit hook that was created under `.husky/pre-commit`\n\n```\n#!/bin/sh\n. \"$(dirname \"$0\")/_/husky.sh\"\n\nnpm run pre-commit-checks\n\n```\n\n### Commit!\n\nAll done. That's it. Go ahead and make changes as usual. The next time you commit, you will see your pre-commit hook execute.\n\n#### Notes\n\nYou can see some other options for combining Prettier with Pre-Commit tools [here](https://prettier.io/docs/en/precommit.html).",
+          "html": "<p><em>This tutorial was written for Husky versions 5 and 6.</em></p>\n<p>Pre-Commit hooks are a neat way to help keep code bases clean and avoid introducing unnecessary noise during the code review process. I commonly use pre commit hooks to run linting, tests, or check for other trivial things that need not be pointed out in Pull Requests leaving more time to focus on more important changes.</p>\n<p><a href=\"https://github.com/typicode/husky\">Husky</a> makes using Git hooks quite easy but setup can be confusing with newer versions. Since v5 support of an entry in the <code>package.json</code> has been dropped so a lot of tutorials are out of date.</p>\n<h3>Requirements</h3>\n<ul>\n<li>Prettier (installed as a dev dependency in your project)</li>\n<li>npm or yarn</li>\n</ul>\n<h3>Install Husky</h3>\n<p>We can start by adding <a href=\"https://typicode.github.io/husky/#/?id=install\">Husky to our project</a>. If you are already using an older version of Husky (v4), you can skip the rest of this blog and just follow <a href=\"https://typicode.github.io/husky/#/?id=migrate-from-v4-to-v6\">this migration guide</a>.</p>\n<pre><code class=\"language-bash\">npx husky-init &#x26;&#x26; npm install       # npm\nnpx husky-init &#x26;&#x26; yarn install       # Yarn 1\nyarn dlx husky-init --yarn2 &#x26;&#x26; yarn install # Yarn 2\n</code></pre>\n<p>This does a few things:</p>\n<ul>\n<li>A <code>.husky</code> directory added to the root of the project. This is the default Husky directory where hooks will live.</li>\n<li>A simple <code>pre-commit</code> hook is created under this directory which we can tailor as we see fit.</li>\n</ul>\n<h3>Install pretty-quick</h3>\n<p><a href=\"https://github.com/azz/pretty-quick#readme\">pretty-quick</a> will run Prettier on your changed files. Add this as a dev dependency to your project.</p>\n<pre><code class=\"language-bash\">npm install --d pretty-quick        # npm\nyarn add -D pretty-quick            # Yarn\n</code></pre>\n<h3>Configure the Hook</h3>\n<p>To run pretty-quick as part of our pre-commit hook, we simply need to add a command for it</p>\n<p>Add to package.json a new script to run from the hook</p>\n<pre><code class=\"language-json\">{\n  ...,\n  \"pre-commit-checks\": \"pretty-quick --staged\"\n}\n</code></pre>\n<p>Then add this script to the pre-commit hook that was created under <code>.husky/pre-commit</code></p>\n<pre><code>#!/bin/sh\n. \"$(dirname \"$0\")/_/husky.sh\"\n\nnpm run pre-commit-checks\n\n</code></pre>\n<h3>Commit!</h3>\n<p>All done. That's it. Go ahead and make changes as usual. The next time you commit, you will see your pre-commit hook execute.</p>\n<h4>Notes</h4>\n<p>You can see some other options for combining Prettier with Pre-Commit tools <a href=\"https://prettier.io/docs/en/precommit.html\">here</a>.</p>"
+        },
+        "_id": "husky-pretty-quick.mdx",
+        "_raw": {
+          "sourceFilePath": "husky-pretty-quick.mdx",
+          "sourceFileName": "husky-pretty-quick.mdx",
+          "sourceFileDir": ".",
+          "contentType": "mdx",
+          "flattenedPath": "husky-pretty-quick"
+        },
+        "type": "Writing",
+        "slug": "husky-pretty-quick"
+      },
+      "documentHash": "1679691477160",
+      "hasWarnings": false,
+      "documentTypeName": "Writing"
+    }
+  }
+}

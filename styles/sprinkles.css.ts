@@ -2,6 +2,7 @@ import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles'
 import { BREAKPOINTS, theme } from './theme.css'
 
 const { tokens, vars } = theme  
+const spacesWithAuto = { ...tokens.space, auto: 'auto' };
 
 const responsiveProperties = defineProperties({
   defaultCondition: 'initial',
@@ -50,6 +51,16 @@ const responsiveProperties = defineProperties({
     maxWidth: tokens.sizes,
     minHeight: tokens.sizes,
     minWidth: tokens.sizes,
+    margin: spacesWithAuto,
+    marginTop: spacesWithAuto,
+    marginBottom: spacesWithAuto,
+    marginLeft: spacesWithAuto,
+    marginRight: spacesWithAuto,
+    padding: tokens.space,
+    paddingTop: tokens.space,
+    paddingBottom: tokens.space,
+    paddingLeft: tokens.space,
+    paddingRight: tokens.space,
     textAlign: ['left', 'center', 'right'],
     alignContent: ['start', 'end', 'center'],
     fontSize: theme.tokens.fontSizes,
